@@ -14,33 +14,22 @@ public class ScannerEx02 {
 		 * */
 		int num1, num2, result;
 		char calculator;
-		Scanner scan = new Scanner(System.in);
+		//Scanner scan = new Scanner(System.in);
 		
-		System.out.println("정수1을 입력하세요");
-		num1 = scan.nextInt();
-		System.out.println("정수2를 입력하세요");
-		num2 = scan.nextInt();
-		System.out.println("연산자를 입력하세요");
-		calculator = scan.next().charAt(0);
-		if (calculator== '+')
-		{
-			result = num1 + num2;
-			System.out.println("결과 : " + num1 + calculator + num2 + "= " +result );
-		}
-		else if (calculator == '-') {
-			result = num1 - num2;
-			System.out.println("결과 : " + num1 + calculator + num2 + "= " +result  );
-		}
-		else if (calculator == '*')
-		{
-			result = num1 * num2;
-			System.out.println("결과 : " + num1 + calculator + num2 + "= " +result  );
-		}
-		else
-			{
-			result = num1 / num2;
-			System.out.println("결과 : " + num1 + calculator + num2  + "= " +result );
-		}
+		/*
+		 * System.out.println("정수1을 입력하세요"); num1 = scan.nextInt();
+		 * System.out.println("정수2를 입력하세요"); num2 = scan.nextInt();
+		 * System.out.println("연산자를 입력하세요"); calculator = scan.next().charAt(0);
+		 */
+		/*
+		 * if (calculator== '+') { result = num1 + num2; System.out.println("결과 : " +
+		 * num1 + calculator + num2 + "= " +result ); } else if (calculator == '-') {
+		 * result = num1 - num2; System.out.println("결과 : " + num1 + calculator + num2 +
+		 * "= " +result ); } else if (calculator == '*') { result = num1 * num2;
+		 * System.out.println("결과 : " + num1 + calculator + num2 + "= " +result ); }
+		 * else { result = num1 / num2; System.out.println("결과 : " + num1 + calculator +
+		 * num2 + "= " +result ); }
+		 */
 	}
 
 }
