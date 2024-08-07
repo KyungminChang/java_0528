@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="//code.jquery.com/jquery-3.7.1.js"></script>
+	<title>게시글 관리</title>
+	<style>
+		.form{
+		 margin-top: 20px; text-align: left; border-radius: 50%;
+		}
+		.submit{
+			border: 1px solid tomato; background-color: white;
+		}
+		 *{
+			width: 500px;
+		}
+		.container{
+			justify-content: center;
+		}
+		.contents{
+			height: 200px; width: 500px;
+		}
+		.list{
+			width: 100%; margin-top: 10px;
+			text-align: center;
+		}
+	</style>
+
+</head>
+<body>
+	<form action="" class="form">
+		<div class="container">
+			<label for=""><h1>게시글 등록</h1></label>
+			<label for="">제목 : </label><br>
+			<input type="text" placeholder="제목을 입력하세요."><br>
+			<label for="">작성자 : </label><br>
+			<input type="text" placeholder="작성자를 입력하세요."><br>
+			<label for="">내용 : </label><br>
+			<input type="text" placeholder="내용을 입력하세요." class="contents"><br>
+			<button class="submit">등록</button><br>
+		</div>
+	</form>
+	<hr>
+	<form action="" class="list">
+		<label for=""><h1>게시글 리스트</h1></label>
+	<table>
+		<tr>
+			<td>번호</td>
+			<td>제목</td>
+			<td>작성자</td>
+			<td>조회수</td>
+		</tr>
+		<tr>
+			<td>등록된 게시글이 없습니다.</td>
+		</tr>
+	</table>
+	</form>
+</body>
+</html>

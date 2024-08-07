@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>회원가입</title>
+</head>
+<body>
+	<form id="signupForm">
+			ID: <input type="text" id="id">
+			<br>
+			PW: <input type="password" id="pw">
+			<br>
+			CHECK: <input type="password" id="checkPw">
+			<br>
+			<button type="button" id="check">확인</button>
+	</form>
+
+	<script>
+			document.getElementById('check').addEventListener('click', function() {
+					let userId = document.getElementById('id').value;
+					let userPw = document.getElementById('pw').value;
+					let checkPw = document.getElementById('checkPw').value;
+
+					let idRegex = /^[A-Za-z]+$/;
+					let pwRegex = /^[A-Za-z0-9]+$/;
+
+					if (!idRegex.test(userId)) {
+							alert('ID는 영어로만 입력하세요.');
+							return;
+					}
+
+					if (!pwRegex.test(userPw)) {
+							alert('비밀번호는 영어와 숫자만 사용 가능합니다.');
+							return;
+					}
+
+					if (userPw !== checkPw) {
+							alert('비밀번호 확인이 비밀번호와 다릅니다.');
+							return;
+					}
+
+					alert('회원 가입이 완료되었습니다.');
+			});
+	</script>
+</body>
+</html>

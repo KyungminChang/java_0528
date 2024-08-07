@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>transform:rotate</title>
+</head>
+<style>
+	.box{
+		width: 200px; height: 200px; border: 3px solid black;
+		margin-bottom: 10px;
+		background: url(http://files.ban-life.com/content/2021/12/content_body_701639472406.jpg)
+		center / contain no-repeat;
+	}
+	.container{ perspective: 500px;}
+	/* 
+	rotate?()
+		- 요소를 회전시키는 함수
+		- 회전하기 때문에 요소의 모양이 바뀌진 않음
+		- 없음: x,y축으로 회전
+		- X : 수평으로 회전
+		- Y : 수직으로 회전
+		- Z : z축으로 회전
+		- 3d : x,y,z축으로 회전
+		- z축인 경우 부모 요소에 perspective 요소를 추가해야 깊이를 더 명확히 느낄 수 있다.
+	*/
+	.r1{ transform: rotateX(60deg);}
+	.r2{ transform: rotateY(60deg);}
+	.r3{ transform: rotate(60deg);}
+	.r4{ transform: rotateZ(60deg);}
+	.r5{ transform: rotate(2); }
+
+</style>
+<body>
+	<div class="container">
+		<div class="box"></div>
+		<div class="box r1"></div>
+		<div class="box r2"></div>
+		<div class="box r3"></div>
+		<div class="box r4"></div>
+		<div class="box r5"></div>
+	</div>		
+</body>
+</html>

@@ -7,6 +7,7 @@ import java.util.Arrays;
 public class ipEx01 {
 
 	public static void main(String[] args) {
+		String add;
 		//xxx.xxx.xxx.xxx : Ipv4
 		try {
 			InetAddress address = InetAddress.getByName("localhost");
@@ -14,7 +15,9 @@ public class ipEx01 {
 			
 			address = InetAddress.getByName("www.naver.com");
 			System.out.println(address);
-			
+			String add1 = InetAddress.getLocalHost().getHostAddress();
+			System.out.println(add1);
+			add = InetAddress.getLocalHost().getHostAddress();
 			InetAddress [] list = InetAddress.getAllByName("www.naver.com");
 			System.out.println(Arrays.toString(list));
 		} catch (UnknownHostException e) {

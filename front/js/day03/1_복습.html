@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#box{
+			height: 500px; border: 2px solid black;
+		}
+		.bg-yellow{ background-color: yellow;}
+	</style>
+</head>
+<body>
+	<button id="btn">버튼</button>
+	<div id="box"></div>
+	<script>
+		//버튼 요소를 선택
+		const btn = document.getElementById('btn');
+		//박스 요소를 선택
+		const box = document.getElementById('box');
+		btn.addEventListener('click', function(){
+			box.style.borderColor = 'red';
+			//박스의 배경이 흰색이면 노랑색으로, 노랑색이면 흰색으로 변경
+			box.classList.toggle('bg-yellow');
+		});
+	</script>
+</body>
+</html>

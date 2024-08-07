@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>게시글</title>
+	<script src="//code.jquery.com/jquery-3.7.1.js"></script>
+	<style>
+		.container{
+			width: 500px; margin: 0 auto;
+		}
+		.form-group{ margin-bottom: 10px;}
+		.form-control{ 
+			display: block; width: 100%;box-sizing: border-box;
+			border: 1px solid black; border-radius: 5px;
+			min-height: 24px; line-height: 22px;margin-top: 5px;
+		}
+		.btn{
+			display: block; border: 1px solid tomato; 
+			box-sizing: border-box; width: 500px; border-radius: 5px;
+			line-height: 24px; margin: 0 auto;
+		}
+		.table{ border-collapse: collapse; width: 100%;}
+		.table th, .table td{
+			border: 1px solid black; border-width: 1px 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>게시글 등록</h1>
+		<form action="" class="submit">
+			<div class="form-group">
+				<label for="title">제목 :</label>
+				<input type="text" placeholder="제목을 입력하세요" name="title" id="title" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="writer">작성자 :</label>
+				<input type="text" placeholder="작성자를 입력하세요" name="writer" id="writer" class="form-control">
+			</div>
+			<div class="form-group"></div>
+				<label for="">내용 :</label>
+				<textarea placeholder="내용을 입력하세요" rows="10" name="content" id="content" class="form-control"></textarea>
+			</div>
+				<button class="btn">등록</button>
+		</form>
+	</div>
+	<hr>
+	<div class="container">
+		<h1>게시글 리스트</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>제목</th>
+					<th>작성자</th>
+					<th>조회수</th>
+				</tr>
+			</thead>
+			<tbody class="post-list">
+				<tr>
+					<th colspan="4" class="innerContents">등록된 게시글이 없습니다.</th>
+					
+				</tr>
+			</tbody>
+		</table>
+		<script>
+			var list = [];
+			
+			$('.submit').submit(function(){
+				var title = $('#title').val();
+				var writer = $('#writer').val();
+				var content = $('#content').val();
+				
+				// var post = {
+				// 	num : list.length + 1,
+				// 	title : title,
+				// 	writer : writer,
+				// 	content : content,
+				// 	views : 0
+				// }
+				var post = new Post(list.length+1, title, writer, content);
+				var post = Post2(list.length+1, title, writer, content);
+				var post =  new Post3(list.length+1, title, writer, content);
+ 				list.unshift(post); // 수정된 부분
+        $('#title').val('');
+        $('#writer').val('');
+        $('#content').val('');
+        
+        displayList(list);
+        return false;
+    });
+
+    function displayList(list) {
+        var str = '';
+        if (list.length == 0) {
+            str = `
+            <tr>
+                <th colspan="4">등록된 게시글이 없습니다.</th>
+            </tr>
+            `;
+        } else {
+            for (var i = 0; i < list.length; i++) {
+                str += `
+                <tr>
+                    <td>${list[i].num}</td>
+                    <td>${list[i].title}</td>
+                    <td>${list[i].writer}</td>
+                    <td>${list[i].views}</td>
+                </tr>
+                `;
+            }
+        }
+        $('.post-list').html(str);
+			}
+			class Post{
+				constructor(num, title, writer, content){
+					this.num = num;
+					this.title = title;
+					this.content = content;
+					this.writer = writer;
+				}
+			}
+			function Post2(num, title, writer, content){
+				return {
+					num : num,
+					title : title,
+					writer : writer,
+					content : content,
+					views : 0
+				}
+			}
+			function Post3(num, title, writer, content){
+					this.num = num;
+					this.title = title;
+					this.content = content;
+					this.writer = writer;
+					this.views  = 0;
+			}
+		</script>
+	</div>
+</body>
+</html>

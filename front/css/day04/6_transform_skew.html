@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>transform:skew</title>
+</head>
+<style>
+	.box{
+		width: 200px; height: 200px; border: 3px solid black;
+		margin-bottom: 10px;
+		background: url(http://files.ban-life.com/content/2021/12/content_body_701639472406.jpg)
+		center / contain no-repeat;
+	}
+	.container{ perspective: 500px;}
+	/* 
+	skew?()
+		- 요소를 회전시키는 함수
+		- 회전하기 때문에 요소의 모양이 바뀌진 않음
+		- 없음: x,y축으로 회전
+		- X : 수평으로 회전
+		- Y : 수직으로 회전
+		- Z : z축으로 회전
+		- 3d : x,y,z축으로 회전
+		- z축인 경우 부모 요소에 perspective 요소를 추가해야 깊이를 더 명확히 느낄 수 있다.
+	*/
+	.sk1{ transform: skewX(60deg);}
+	.sk2{ transform: skewY(60deg);}
+	.sk3{ transform: skew(60deg, 60deg);}
+
+</style>
+<body>
+	<div class="container">
+		<div class="box"></div>
+		<div class="box sk1"></div>
+		<div class="box sk2"></div>
+		<div class="box sk3"></div>
+	</div>		
+</body>
+</html>
