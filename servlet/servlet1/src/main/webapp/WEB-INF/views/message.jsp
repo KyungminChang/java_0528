@@ -6,13 +6,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>메인</title>
-<jsp:include page="/WEB-INF/views/common/head.jsp"/>
+<title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-<div class="container">
-	<h1>메인 페이지</h1>
-</div>
+
+	<script type="text/javascript">
+		var msg = '${msg}';
+		var url = '${url}';
+		if(msg != ''){
+			alert(msg);
+			location.href = '<%=request.getContextPath()%>' + url;
+		}
+	</script>
 </body>
 </html>

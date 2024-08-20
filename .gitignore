@@ -6,3 +6,5 @@
 java_jkm/.gitignore
 
 MANIFEST.MF
+
+*.jar
