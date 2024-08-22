@@ -14,7 +14,7 @@ if('${msg}' != ''){
 	alert('${msg}');
 }
 if('${url}' != ''){
-	location.href="<c:url value="${url}"/>"
+	location.href = '<c:url value="${url}"/>';
 }
 </script>
 </body>
