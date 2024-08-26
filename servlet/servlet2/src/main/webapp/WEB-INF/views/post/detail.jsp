@@ -35,6 +35,11 @@
 		<label>내용 : </label>
 		<div class="form-control" style="min-height: 400px; height: auto">${post.po_content }</div>
 	</div>
+	<div class="clearfix">
+	<c:if test="${user.me_id == post.po_me_id }">
+		<a class="btn btn-outline-success float-right" href="<c:url value="/post/update?po_num=${post.po_num}"/>">수정</a>
+	</c:if>
+	</div>
 </div>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
